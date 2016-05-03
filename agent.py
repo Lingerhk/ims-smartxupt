@@ -6,7 +6,7 @@ import time
 import urllib2
 
 heartbeat = 10
-url = 'http://test.smartxupt.com/sign_action.php?agent='
+url = 'http://ims.smartxupt.com/sign_action.php?agent='
 #url = 'http://127.0.0.1:8000/action?agent='
 
 agentid = uuid.UUID(int = uuid.getnode()).hex[-12:]
