@@ -21,7 +21,12 @@ if($_POST){
         $_SESSION['username']=true;
         $_SESSION['admin']=false;
         $_SESSION['username']=$usernm;
-        echo "<meta http-equiv=\"Refresh\" content=\"0;url=../assess_home.php\">";
+        if(isset($_SESSION['userurl'])){
+            $url = $_SESSION['userurl'];
+        }else{
+            $url = '/';
+        }
+        echo "<meta http-equiv=\"Refresh\" content=\"0;url=$url\">";
     }else{
         echo "<script>alert('学号或密码错误！')</script>";
         echo "<meta http-equiv=\"Refresh\" content=\"0;url=login.php\">";
