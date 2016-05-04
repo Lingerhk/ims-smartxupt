@@ -159,6 +159,33 @@ class db_sql_functions
     }
 
     /*
+    * 检查近期用户在线数
+    * 参数：alive
+    * 返回值：array(username) / false
+    */
+    public function check_online_users($timelive)
+    {
+        $ntime = time();
+        $ltime = $ntime - $timelive;
+
+        $sql = "SELECT username FROM signing WHERE etime>=?";
+        $stmt = $this->dbconn->get_mysqli()->stmt_init();
+        $stmt->prepare($sql);
+        $stmt->bind_param('i',$ltime);
+        $stmt->execute();
+        $stmt->bind_result($usernm);
+
+        $result = array();
+        while($row = $stmt->fetch()){
+            if ($row){
+                array_push($result,$usernm);
+            }
+        }
+
+        return $result;
+    }
+
+    /*
     * 检查心跳存活状态
     * 参数：username,alive
     * 返回值：array(uid,stime) / false
@@ -167,8 +194,8 @@ class db_sql_functions
     {
         $sql = "SELECT uid,stime FROM signing WHERE username=? AND etime>=?";
         $stmt = $this->dbconn->get_mysqli()->stmt_init();
-        $rs = $stmt->prepare($sql);
-        $stmt->bind_param('ss',$username,$alive);
+        $stmt->prepare($sql);
+        $stmt->bind_param('si',$username,$alive);
         $stmt->execute();
         $stmt->bind_result($uid,$stime);
 

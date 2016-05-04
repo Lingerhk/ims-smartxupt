@@ -42,7 +42,7 @@
 				 <nav class="cl-effect-1">
 					<ul class="res"> 
                                                 <li><a href="/">主页</a></li>
-						<li><a href="sign_online">状态查询</a></li> 
+						<li><a href="sign_online.php">状态查询</a></li> 
 						<li><a class="active" href="sign_home">Agent安装</a></li>
 						<li><a href="loginout">退出</a></li>
 				   </ul>
