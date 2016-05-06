@@ -2114,10 +2114,11 @@ button.btn.btn-lg {
   padding: 0.3em 1em;
 }
 }
+/*--log in--*/
+@media(min-width:768px){
 .login-content {
     width: 400px;
     background: #fff;
-    margin-top: -52px;
     margin: 0 auto;
     margin-bottom: 64px;
     border: 1px solid #ddd;
@@ -2193,14 +2194,86 @@ button.btn.btn-lg {
   color:#ffffff;
   margin-right:2px;
 }
-.bottom{
-  width:100%; 
-  height:40px;
-  line-height:40px;
-  text-align:right;
-  color:#ffffff;
-  font-weight:bold;
-  font-size:24px;
-  margin-top:80px;
-  padding-right:40px;
 }
+@media (max-width:768px) {
+  .login-content {
+    width: 255px;
+    background: #fff;
+    margin: 0 auto;
+    margin-bottom: 64px;
+    border: 1px solid #ddd;
+}
+.login-content h2 {
+    font-size: 1.05em;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    background: #eee;
+}
+.login-info{
+  width:240px; 
+  height:40px;
+  margin-left:auto;
+  margin-right:auto; 
+  background:#ffffff;
+  border: 2px solid #f0f7fb;
+  margin-top:20px;
+  border:1px solid #ddd;
+}
+.login-info span.user{
+  float:left;
+  width:40px; 
+  height:30px;
+  margin:5px auto 5px auto; 
+  background:url(../images/icon-user.gif) no-repeat center center; 
+  border-right:1px solid #a9a9a9
+}
+.login-info span.pwd{
+  float:left;
+  width:40px; 
+  height:30px;
+  margin:5px auto 5px auto; 
+  background:url(../images/icon-pwd.png) no-repeat center center; 
+  border-right:1px solid #a9a9a9
+}
+.login-input{
+  width:195px; 
+  line-height: 38px;
+  height:38px;
+  background:#ffffff;
+  border:none;
+  margin:0;
+  padding:0;
+  padding-left:20px;
+
+}
+.login-oper{
+  width:240px; 
+  height:40px;
+  margin-left:auto;
+  margin-right:auto; 
+  margin-top:10px;
+  
+}
+.login-btn{
+  width:80px;
+  height:30px;
+  border:none;
+  background:#056daa;
+  color:#ffffff;
+  margin-left:30px;
+
+  
+}
+.login-reset{
+  float:right;
+  width:80px;
+  height:30px;
+  border:none;
+  background:#7c7777;
+  color:#ffffff;
+  margin-right:30px;
+}
+}
+
+
